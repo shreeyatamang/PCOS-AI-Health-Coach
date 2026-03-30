@@ -1,0 +1,19 @@
+Source: Research Studies
+Category: Insulin Resistance
+
+Insulin resistance is a key factor in PCOS.
+
+Key Insights:
+- High insulin levels worsen hormone imbalance
+- Early detection of insulin resistance improves outcomes
+
+Mechanisms:
+- Genetic and epigenetic factors affect insulin sensitivity
+- DNA methylation may reduce insulin receptor function
+
+Emerging Research:
+- Long non-coding RNAs (LncRNAs) may regulate insulin signaling
+- These could become future diagnostic markers
+
+Conclusion:
+Targeting insulin resistance through lifestyle and early intervention is critical in PCOS management.
