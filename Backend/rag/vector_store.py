@@ -9,7 +9,7 @@ def load_vector_store():
     with open(PKL_PATH, "rb") as f:
         return pickle.load(f)
 
-def retrieve_docs(query, db, k=3):
+def retrieve_docs(query, db, k=5):
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     docs = db.similarity_search(query, k=k)
     return [doc.page_content for doc in docs]
