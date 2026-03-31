@@ -20,12 +20,13 @@ export default function ChatWindow() {
   const bottomRef = useRef();
   const textareaRef = useRef();
 
-  // Listen for quick-ask events from sidebar
+  
   useEffect(() => {
     const handler = (e) => handleSend(e.detail);
     window.addEventListener("quick-ask", handler);
     return () => window.removeEventListener("quick-ask", handler);
   }, []);
+
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -39,18 +40,21 @@ export default function ChatWindow() {
   };
 
   const handleSend = async (text = input) => {
-    if (!text.trim() || loading) return;
+    const trimmed = typeof text === "string" ? text.trim() : input.trim();
+    if (!trimmed || loading) return;
 
-    const userMsg = { role: "user", content: text };
+    const userMsg = { role: "user", content: trimmed };
     setMessages(prev => [...prev, userMsg]);
     historyRef.current.push(userMsg);
 
     setInput("");
-    if (textareaRef.current) textareaRef.current.style.height = "52px";
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "52px";
+    }
     setLoading(true);
 
     try {
-      const res = await sendChat(text, historyRef.current.slice(-6));
+      const res = await sendChat(trimmed, historyRef.current.slice(-6));
       const botMsg = { role: "assistant", content: res.response };
       setMessages(prev => [...prev, botMsg]);
       historyRef.current.push(botMsg);
@@ -64,10 +68,14 @@ export default function ChatWindow() {
     }
   };
 
+  const hasMessages = messages.length > 0 || loading;
+
   return (
     <div className="chat-container">
       <div className="messages">
-        {messages.length === 0 && (
+
+        {/* Welcome screen — only shown when no messages */}
+        {!hasMessages && (
           <div className="welcome">
             <div className="welcome-flower">🌸</div>
             <h2>Hi, I'm Maya</h2>
@@ -82,10 +90,15 @@ export default function ChatWindow() {
           </div>
         )}
 
+        {/* Spacer — pushes messages to the bottom when there are only a few */}
+        {hasMessages && <div style={{ flex: 1 }} />}
+
+        {/* Message list */}
         {messages.map((msg, i) => (
           <MessageBubble key={i} msg={msg} />
         ))}
 
+        {/* Typing indicator */}
         {loading && (
           <div className="message-row">
             <div className="avatar bot">✿</div>
@@ -93,9 +106,11 @@ export default function ChatWindow() {
           </div>
         )}
 
+        {/* Scroll anchor */}
         <div ref={bottomRef} />
       </div>
 
+      {/* Input area */}
       <div className="input-area">
         <div className="input-wrap">
           <textarea
@@ -113,7 +128,11 @@ export default function ChatWindow() {
           />
         </div>
 
-        <button className="send-btn" onClick={() => handleSend()} disabled={loading || !input.trim()}>
+        <button
+          className="send-btn"
+          onClick={() => handleSend()}
+          disabled={loading || !input.trim()}
+        >
           <svg viewBox="0 0 24 24">
             <line x1="22" y1="2" x2="11" y2="13" />
             <polygon points="22 2 15 22 11 13 2 9 22 2" />

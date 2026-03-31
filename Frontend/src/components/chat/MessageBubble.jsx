@@ -2,7 +2,7 @@ export default function MessageBubble({ msg }) {
   const isUser = msg.role === "user";
   const isError = msg.role === "error";
 
-  // Simple formatter: bold **text**, bullet lines starting with -
+  
   const formatContent = (text) => {
     const lines = text.split("\n");
     return lines.map((line, i) => {

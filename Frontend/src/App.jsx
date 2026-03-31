@@ -4,7 +4,7 @@ import LandingPage from './pages/LandingPage'
 import ChatPage from './pages/ChatPage'
 
 function App() {
-  const [page, setPage] = useState('landing') // 'landing' | 'chat'
+  const [page, setPage] = useState('landing') 
   const [transitioning, setTransitioning] = useState(false)
 
   const goToChat = () => {

@@ -1,7 +1,7 @@
-/* ── Google Fonts ──── */
+/* ── Google Fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
-/* ── Tokens ──── */
+/* ── Tokens*/
 :root {
   --blush:        #f9d7e3;
   --blush-deep:   #f2b4cb;
@@ -25,15 +25,23 @@
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'DM Sans', sans-serif;
   --sidebar-w:    272px;
+  --nav-h:        68px;
 }
 
-/* ── Reset ─────────────── */
+/* ── Reset ────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); }
+html { width: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text-dark);
+  width: 100%;
+  overflow-x: hidden;
+}
 a { text-decoration: none; color: inherit; }
 
-/* ── Page transition ───────────*/
-.app-root { min-height: 100vh; }
+/* ── Page transition ─────*/
+.app-root { min-height: 100vh; width: 100%; }
 .fade-in  { animation: fadeIn 0.5s ease both; }
 .fade-out { animation: fadeOut 0.5s ease both; }
 @keyframes fadeIn  { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -44,6 +52,7 @@ a { text-decoration: none; color: inherit; }
 ═══════════════════════════════════════════════════════════════ */
 .landing {
   min-height: 100vh;
+  width: 100%;
   position: relative;
   overflow-x: hidden;
 }
@@ -67,18 +76,24 @@ a { text-decoration: none; color: inherit; }
   to   { transform: translate(25px, 20px) scale(1.06); }
 }
 
-/* ── Nav ─────────────────────────────────────────────────────── */
+/* ── Nav ───────── */
 .landing-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 60px;
-  background: rgba(253,246,240,0.82);
+  padding: 16px 60px;
+  height: var(--nav-h);
+  background: rgba(253,246,240,0.88);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 20px rgba(200,100,140,0.07);
 }
 
 .nav-logo {
@@ -154,17 +169,18 @@ a { text-decoration: none; color: inherit; }
   .nav-links { display: none; }
 }
 
-/* ── Hero ─────────────────────────────────────────────────────── */
+/* ── Hero ───────────── */
 .hero {
   position: relative;
   z-index: 1;
-  min-height: 90vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 24px 60px;
+  padding: calc(var(--nav-h) + 60px) 24px 80px;
 }
 
 .hero-badge {
@@ -286,7 +302,7 @@ a { text-decoration: none; color: inherit; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Section shared ───────────────────────────────────────────── */
+/* ── Section shared ────────────*/
 .section-label {
   font-size: 12px;
   letter-spacing: 2px;
@@ -304,10 +320,11 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.15;
 }
 
-/* ── Features ────────────────────────────────────────────────── */
+/* ── Features ───────────────── */
 .features {
   position: relative;
   z-index: 1;
+  width: 100%;
   padding: 100px 60px;
   text-align: center;
   background: rgba(255,255,255,0.4);
@@ -321,6 +338,7 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -359,16 +377,18 @@ a { text-decoration: none; color: inherit; }
   .features { padding: 70px 24px; }
 }
 
-/* ── How it works ────────────────────────────────────────────── */
+/* ── How it works ─────────────── */
 .how {
   position: relative;
   z-index: 1;
+  width: 100%;
   padding: 100px 60px;
   text-align: center;
 }
 
 .steps {
   max-width: 720px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -417,10 +437,11 @@ a { text-decoration: none; color: inherit; }
   .step { padding: 22px 20px; gap: 16px; }
 }
 
-/* ── CTA Banner ──────────────────────────────────────────────── */
+/* ── CTA Banner ────────────────*/
 .cta-banner {
   position: relative;
   z-index: 1;
+  width: 100%;
   text-align: center;
   padding: 100px 24px;
   background: linear-gradient(135deg, rgba(249,215,227,0.6), rgba(242,180,203,0.4));
@@ -446,10 +467,11 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 36px;
 }
 
-/* ── Footer ──────────────────────────────────────────────────── */
+/* ── Footer ──────────────────────*/
 .landing-footer {
   position: relative;
   z-index: 1;
+  width: 100%;
   background: rgba(58,42,48,0.96);
   color: rgba(255,255,255,0.75);
   padding: 64px 60px 32px;
@@ -460,6 +482,7 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: 2fr 1fr 1fr 2fr;
   gap: 48px;
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto 48px;
 }
 
@@ -507,6 +530,7 @@ a { text-decoration: none; color: inherit; }
 
 .footer-bottom {
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
   padding-top: 28px;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -534,6 +558,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -551,7 +576,7 @@ a { text-decoration: none; color: inherit; }
 .blob-2 { width: 400px; height: 400px; background: radial-gradient(circle,#ddebd9,#b5c9b0); bottom:-100px; right:-80px; animation-delay:-6s; }
 .blob-3 { width: 300px; height: 300px; background: radial-gradient(circle,#fdf6f0,#f5e6de); top:40%; left:50%; animation-delay:-12s; }
 
-/* ── Chat Header ─────────────────────────────────────────────── */
+/* ── Chat Header*/
 .app-header {
   position: relative;
   z-index: 10;
@@ -564,6 +589,7 @@ a { text-decoration: none; color: inherit; }
   border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 12px rgba(200,100,140,0.07);
   flex-shrink: 0;
+  width: 100%;
 }
 
 .header-left { display: flex; align-items: center; gap: 16px; }
@@ -653,13 +679,14 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.5px;
 }
 
-/* ── App body ─────────────────────────────────────────────────── */
+/* ── App body  */
 .app-body {
   display: flex;
   flex: 1;
   overflow: hidden;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 /* Sidebar overlay */
@@ -821,3 +848,49 @@ textarea:focus { border-color: var(--rose); box-shadow: 0 0 0 3px rgba(232,120,1
 .send-btn:hover:not(:disabled) { transform: scale(1.08); box-shadow: 0 6px 22px rgba(200,80,120,0.45); }
 .send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .send-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+
+/* Messages container: column layout so spacer + messages stack correctly */
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* The spacer div pushes messages to the bottom when there are only a few */
+.messages > div[style] {
+  min-height: 0;
+}
+ 
+/* message rows don't stretch to fill flex space */
+.message-row {
+  flex-shrink: 0;
+}
+ 
+/* Welcome fills the whole messages area when shown */
+.welcome {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Reserve space for the fixed nav */
+.landing {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: var(--nav-h); 
+}
+ 
+
+.hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-h)); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px 80px; 
+}
