@@ -4,6 +4,10 @@
 
 An AI-powered health coach for women with PCOS (Polycystic Ovary Syndrome). Ask questions about diet, exercise, hormones, stress, and symptoms . Get warm, medically responsible answers backed by trusted sources.
 
+##  App Preview 
+<p align="center"> <img src="Frontend/src/assets/homepage.png" width="800"/> </p>
+<p align="center"> <img src="Frontend/src/assets/chat-ui.png" width="800"/> </p>
+
 ---
 
 ##  How It Works
