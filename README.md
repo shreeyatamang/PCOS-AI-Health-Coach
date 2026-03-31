@@ -1,6 +1,6 @@
-# 🌸 PCOS AI Health Coach
+# PCOS AI Health Coach
 
-An AI-powered health coach for women with PCOS (Polycystic Ovary Syndrome). Ask questions about diet, exercise, hormones, stress, and symptoms — and get warm, medically responsible answers backed by trusted sources.
+An AI-powered health coach for women with PCOS (Polycystic Ovary Syndrome). Ask questions about diet, exercise, hormones, stress, and symptoms . Get warm, medically responsible answers backed by trusted sources.
 
 ---
 
@@ -13,25 +13,14 @@ This app uses **RAG (Retrieval-Augmented Generation)**:
 3. The retrieved context + question is sent to **Groq's Llama 3.3 70B** model
 4. The model responds as a professional PCOS coach
 
----
-
-## ✨ Features
-
-- 💬 Chat interface with quick-question shortcuts
-- 🥗 Personalized diet suggestions
-- 🏃 Workout recommendations
-- 🧘 Stress management tips
-- 📊 Insulin resistance explanations
-- 🔍 RAG pipeline for grounded, accurate answers
-- ⚕️ Always recommends a doctor for serious concerns
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/yourusername/pcos-ai-coach.git
+git@github.com:shreeyatamang/PCOS-AI-Health-Coach.git
 cd pcos-ai-coach
 ```
 
@@ -70,7 +59,7 @@ Open `frontend/index.html` in your browser. That's it!
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 | Variable | Description | Required |
 |----------|-------------|----------|
@@ -84,7 +73,7 @@ This app is for **educational purposes only**. It does not replace professional 
 
 ---
 
-## 📄 Knowledge Sources
+##  Knowledge Sources
 
 - [Mayo Clinic — PCOS Diet](https://www.mayoclinic.org)
 - [NHS — PCOS & Insulin Resistance](https://www.nhs.uk)
@@ -93,7 +82,7 @@ This app is for **educational purposes only**. It does not replace professional 
 
 ---
 
-## 🌱 Future Improvements
+##  Future Improvements
 
 - [ ] User authentication and chat history
 - [ ] Symptom tracker and period calendar
