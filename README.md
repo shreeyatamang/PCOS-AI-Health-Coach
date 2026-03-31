@@ -1,4 +1,6 @@
-# PCOS AI Health Coach
+
+# PCOS AI Health Coach  
+
 
 An AI-powered health coach for women with PCOS (Polycystic Ovary Syndrome). Ask questions about diet, exercise, hormones, stress, and symptoms . Get warm, medically responsible answers backed by trusted sources.
 
@@ -13,7 +15,6 @@ This app uses **RAG (Retrieval-Augmented Generation)**:
 3. The retrieved context + question is sent to **Groq's Llama 3.3 70B** model
 4. The model responds as a professional PCOS coach
 
-
 ---
 
 ##  Getting Started
@@ -21,7 +22,8 @@ This app uses **RAG (Retrieval-Augmented Generation)**:
 ### 1. Clone the repo
 ```bash
 git@github.com:shreeyatamang/PCOS-AI-Health-Coach.git
-cd pcos-ai-coach
+cd PCOS-AI-Health-Coach
+
 ```
 
 ### 2. Create and activate virtual environment
@@ -54,10 +56,32 @@ python -m rag.ingest
 uvicorn app.main:app --reload
 ```
 
-### 7. Open the frontend
-Open `frontend/index.html` in your browser. That's it!
+### 7.Frontend Setup
+ 
+Open a **new terminal** and navigate to the frontend folder:
+ 
+```bash
+cd frontend
+```
+ 
+#### Install dependencies
+ 
+```bash
+npm install
+```
+ 
+#### Start the development server
+ 
+```bash
+npm run dev
+```
+ 
+Frontend will be running at `http://localhost:5173` 
+ 
+Open that URL in your browser and start chatting with Maya 🌸
 
 ---
+
 
 ##  Environment Variables
 
@@ -82,6 +106,7 @@ This app is for **educational purposes only**. It does not replace professional 
 
 ---
 
+
 ##  Future Improvements
 
 - [ ] User authentication and chat history
@@ -91,4 +116,4 @@ This app is for **educational purposes only**. It does not replace professional 
 
 ---
 
-Made with 💗 to support women with PCOS
+Made with 💗 to support women with PCOS 🌸
